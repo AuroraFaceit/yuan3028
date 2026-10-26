@@ -1,0 +1,11 @@
+tmp/
+preview/
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+
+# 若不想公开音频文件，把下面这行的注释去掉（页面会退回内置八音盒旋律）
+# site/assets/audio/
+
+.workbuddy/

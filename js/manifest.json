@@ -1,0 +1,239 @@
+{
+ "pink": [
+  {
+   "file": "assets/web/pink/pink-01.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/pink/pink-02.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/pink/pink-03.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/pink/pink-04.jpg",
+   "w": 1200,
+   "h": 551
+  },
+  {
+   "file": "assets/web/pink/pink-05.jpg",
+   "w": 1200,
+   "h": 642
+  },
+  {
+   "file": "assets/web/pink/pink-06.jpg",
+   "w": 900,
+   "h": 1200
+  }
+ ],
+ "sunrise": [
+  {
+   "file": "assets/web/sunrise/sunrise-01.jpg",
+   "w": 720,
+   "h": 960
+  }
+ ],
+ "dusk": [
+  {
+   "file": "assets/web/dusk/dusk-01.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/dusk/dusk-02.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/dusk/dusk-03.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/dusk/dusk-04.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/dusk/dusk-05.jpg",
+   "w": 1200,
+   "h": 903
+  },
+  {
+   "file": "assets/web/dusk/dusk-06.jpg",
+   "w": 1200,
+   "h": 900
+  }
+ ],
+ "daily": [
+  {
+   "file": "assets/web/daily/daily-01.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/daily/daily-02.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/daily/daily-03.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/daily/daily-04.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/daily/daily-05.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/daily/daily-06.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/daily/daily-07.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/daily/daily-08.jpg",
+   "w": 1200,
+   "h": 675
+  },
+  {
+   "file": "assets/web/daily/daily-09.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/daily/daily-10.jpg",
+   "w": 1200,
+   "h": 900
+  }
+ ],
+ "sky": [
+  {
+   "file": "assets/web/sky/sky-01.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/sky/sky-02.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-03.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-04.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-05.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-06.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-07.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-08.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-09.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-10.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "file": "assets/web/sky/sky-11.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-12.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/sky/sky-13.jpg",
+   "w": 1200,
+   "h": 1059
+  }
+ ],
+ "flower": [
+  {
+   "file": "assets/web/flower/flower-01.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/flower/flower-03.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/flower/flower-04.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/flower/flower-05.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/flower/flower-06.jpg",
+   "w": 1200,
+   "h": 900
+  },
+  {
+   "file": "assets/web/flower/flower-07.jpg",
+   "w": 1200,
+   "h": 965
+  },
+  {
+   "file": "assets/web/flower/flower-08.jpg",
+   "w": 1200,
+   "h": 965
+  },
+  {
+   "file": "assets/web/flower/flower-09.jpg",
+   "w": 1200,
+   "h": 965
+  },
+  {
+   "file": "assets/web/flower/flower-10.jpg",
+   "w": 1200,
+   "h": 965
+  }
+ ]
+}

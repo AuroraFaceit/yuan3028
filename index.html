@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>碎碎念念 · 到处看看</title>
+<meta name="description" content="一间建在云上的白色展馆，收藏粉雾海、天空、生活碎片与夜幕来临前的光。" />
+<link rel="stylesheet" href="css/style.css" />
+<script>window.addEventListener("error",function(e){window.__err=String(e.message);});</script>
+</head>
+<body>
+  <!-- 开幕遮罩 -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-spark">✦&ensp;✧&ensp;✦</div>
+      <div class="loader-cn">嗨 好久不见</div>
+      <div class="loader-en">WELCOME BACK · LET BLOOM IN THE MUSEUM</div>
+      <div class="loader-bar"><i id="loaderBar"></i></div>
+      <div class="loader-tip"><span id="loaderPct">正在布展 0%</span></div>
+    </div>
+  </div>
+
+  <canvas id="scene"></canvas>
+
+  <div id="ui">
+    <div class="topscrim"></div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="badge">玺</div>
+        <div class="brand-text">
+          <i>LET BLOOM IN THE MUSEUM</i>
+        </div>
+      </div>
+
+      <nav class="mainnav">
+        <button class="nav-btn active" data-act="hall">展馆</button>
+        <button class="nav-btn" data-act="all">全部展品</button>
+        <button class="nav-btn" data-act="about">展信佳</button>
+      </nav>
+
+      <div class="topright">
+        <span class="tag"><i></i>一个会呼吸的私人展馆</span>
+        <button class="icon-btn" id="fsBtn" title="全屏观看" aria-label="全屏">⛶</button>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="eyebrow" id="heroEn">ABOVE THE CLOUDS, WITHIN MY DAYS.</div>
+      <h1 id="heroTitle">碎碎念念</h1>
+      <p id="heroDesc" class="hero-desc">三十五张照片，一座四层的粉色展塔。头顶是一片流动的粉雾海，脚下是一层一层的天光。</p>
+      <div class="hero-acts">
+        <button class="cta" id="enterBtn">逆转时间 <span>↺</span></button>
+        <button class="cta ghost" id="watchBtn">陪你一起看看 <span>▸</span></button>
+        <button class="cta ghost" id="listenBtn">一起听听 <span>♫</span></button>
+      </div>
+      <!-- 歌曲播放状态：点「一起听听」后显示在这里 -->
+      <div class="now-playing" id="nowPlaying" aria-live="polite">
+        <i class="np-disc"></i>
+        <span class="np-text" id="npText">点「一起听听」，让这里开始有声音</span>
+        <span class="np-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <!-- 切歌：点歌名直接换，正在播的会亮起来 -->
+      <div class="song-switch" id="songSwitch" aria-label="切换歌曲">
+        <button type="button" data-song="stay">Stay With Me</button>
+        <button type="button" data-song="pink">粉雾海</button>
+        <button type="button" data-song="baby">Baby, Don't Cry</button>
+      </div>
+      <div class="hero-foot">
+        <span id="heroFloor" class="fl-tag">1F</span>
+        <span id="heroNum">00</span>
+        <em></em>
+        <span id="heroCn">逆转时间</span>
+      </div>
+
+      <!-- 一楼的电视：点屏幕才亮 -->
+      <section class="tv-panel" id="tvPanel" aria-label="一楼的电视">
+        <div class="tv-screen" id="tvScreen">
+          <canvas class="tv-art" id="tvArt"></canvas>
+          <div class="tv-scan"></div>
+          <div class="tv-osd">
+            <div class="tv-now">NOW PLAYING</div>
+            <div class="tv-title" id="tvTitle">Stay With Me</div>
+            <div class="tv-sub" id="tvSub">点一下 一起听听</div>
+            <div class="tv-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="tv-body">
+          <div class="tv-brand">玺 · TV　一起听听</div>
+          <div class="tv-list" id="tvList"></div>
+          <div class="tv-cap">一楼的电视 · 点歌名开始放，再点一下暂停</div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="exhibits">
+      <div class="ex-head"><span>EXHIBITS</span><em></em><span>04</span></div>
+      <ul id="exList"></ul>
+      <div class="ex-foot">按观展动线排列 · 点击直达</div>
+    </aside>
+
+    <div class="chapterbar" id="chapterBar"></div>
+
+    <div class="hints">
+      <span>左键拖拽看四周</span><i></i>
+      <span>↑ ↓ ← → 移动</span><i></i>
+      <span>1 – 4 换层</span><i></i>
+      <span>滚轮缩放</span><i></i>
+      <button class="tour" id="tourBtn"><span>自动导览</span><b class="dot"></b></button>
+    </div>
+
+    <div class="caption" id="caption">
+      <div class="cap-eyebrow" id="capNum">01 · 粉雾海</div>
+      <div class="cap-title" id="capTitle">胭脂色的十分钟</div>
+      <div class="cap-hint">点击进入这一件展品</div>
+    </div>
+
+    <!-- 凑近一张照片时出现的关闭按钮 -->
+    <button class="photo-close" id="photoClose" title="退回去看整面墙">关掉这张</button>
+
+    <!-- 陪你一起看：一件一件地看过去 -->
+    <div class="watchbar" id="watchBar">
+      <button class="wb-exit" id="wbExit" title="回到自由观看">✕</button>
+      <div class="wb-info">
+        <div class="wb-eyebrow" id="wbNum">01 · 粉雾海</div>
+        <div class="wb-title" id="wbTitle">胭脂色的十分钟</div>
+      </div>
+      <div class="wb-prog"><i id="wbProg"></i></div>
+      <div class="wb-count" id="wbCount">1 / 36</div>
+      <div class="wb-btns">
+        <button id="wbPrev" title="上一件">←</button>
+        <button id="wbNext" title="继续看下一件">下一件 →</button>
+      </div>
+    </div>
+
+    <div class="dpad" id="dpad">
+      <button data-move="up">↑</button>
+      <button data-move="left">←</button>
+      <button data-move="down">↓</button>
+      <button data-move="right">→</button>
+    </div>
+
+    <div class="vignette"></div>
+  </div>
+
+  <!-- 全部展品 -->
+  <div class="modal" id="allModal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-eyebrow">ALL WORKS</div>
+        <h2>全部展品</h2>
+      </div>
+      <button class="modal-close" data-close="allModal">关闭 ✕</button>
+    </div>
+    <div class="modal-body" id="allBody"></div>
+  </div>
+
+  <!-- 展信佳 -->
+  <div class="modal" id="aboutModal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-eyebrow">A LETTER, ALWAYS HERE</div>
+        <h2>展信佳</h2>
+      </div>
+      <button class="modal-close" data-close="aboutModal">关闭 ✕</button>
+    </div>
+    <div class="modal-body about" id="aboutBody"></div>
+  </div>
+
+  <!-- 手机温馨提醒 -->
+  <div class="mobile-tip" id="mobileTip">💌 温馨提醒：用电脑观看体验更佳哦</div>
+
+  <!-- 手机温馨提醒 -->
+  <div class="mobile-tip" id="mobileTip">🌸 温馨提醒：用电脑打开展馆，体验更加哦～</div>
+
+  <!-- 小白聊天窗口 -->
+  <div class="dog-chat" id="dogChat" aria-live="polite">
+    <div class="dc-head">
+      <div class="dc-avatar">🐶</div>
+      <div class="dc-title">
+        <b>小白</b>
+        <i>馆里的萨摩耶向导 · 在线</i>
+      </div>
+      <button class="dc-close" id="dogChatClose" title="和小白说再见">✕</button>
+    </div>
+    <div class="dc-msgs" id="dogMsgs"></div>
+    <div class="dc-input">
+      <input type="text" id="dogInput" placeholder="问小白点什么…" maxlength="60" />
+      <button id="dogSend">发送</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js?v=1026b"></script>
+</body>
+</html>
